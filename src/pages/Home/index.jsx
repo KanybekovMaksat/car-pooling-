@@ -1,32 +1,15 @@
-import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
+import ListNav from "../../components/listNav";
+import { Maps } from "../../components/Maps";
+import { SearchForm } from "../../components/searchForm";
 
 export const Home = () => {
-  // Центр Бишкека
-  const mapCenter = [42.874621, 74.612198];
-
   return (
     <>
-      <YMaps query={{ apikey: "1edf294d-664d-4286-af6a-ac306969cf67" }}>
-        <div style={{ width: "100%", height: "100vh" }}>
-          <Map
-            defaultState={{
-              center: mapCenter,
-              zoom: 12,
-            }}
-            width="100%"
-            height="100%"
-          >
-            {/* Отметка в центре Бишкека */}
-            <Placemark
-              geometry={mapCenter}
-              properties={{
-                hintContent: "Центр Бишкека",
-                balloonContent: "Площадь Ала-Тоо",
-              }}
-            />
-          </Map>
-        </div>
-      </YMaps>
+      <Maps />
+      <div className="absolute left-[4rem] bottom-[30px]">
+        <SearchForm />
+        <ListNav />
+      </div>
     </>
   );
 };
