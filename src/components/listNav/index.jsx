@@ -1,26 +1,30 @@
-import Home from '../../assets/icons/Home'
-import { Other } from '../../assets/icons/Other'
-import { Work } from '../../assets/icons/Work'
+import Home from "../../assets/icons/Home";
+import { Other } from "../../assets/icons/Other";
+import { Work } from "../../assets/icons/Work";
 
 const ListNav = () => {
   const list = [
     {
-      title: 'Дом',
+      title: "Дом",
       img: <Home />,
     },
     {
-      title: 'Работа',
+      title: "Работа",
       img: <Work />,
     },
     {
-      title: 'Другое ',
+      title: "Другое",
       img: <Other />,
     },
-  ]
+  ];
 
   const handleClick = (index) => {
-    console.log(index)
-  }
+    if (index === 0) {
+      localStorage.setItem("state", "[42.859187, 74.667871]");
+    } else if (index === 1) {
+      localStorage.setItem("state", "[42.940056, 74.623418]");
+    }
+  };
 
   return (
     <div className="flex justify-between w-full">
@@ -33,13 +37,13 @@ const ListNav = () => {
         />
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default ListNav
+export default ListNav;
 
 export const NavBtn = (props) => {
-  const { text, icon, onClick } = props
+  const { text, icon, onClick } = props;
 
   return (
     <button
@@ -49,5 +53,5 @@ export const NavBtn = (props) => {
       {text}
       {icon}
     </button>
-  )
-}
+  );
+};
