@@ -13,7 +13,7 @@ const ListNav = () => {
       img: <Work />,
     },
     {
-      title: "Другоеч ",
+      title: "Другое",
       img: <Other />,
     },
   ];
@@ -27,7 +27,7 @@ const ListNav = () => {
   };
 
   return (
-    <div className="flex gap-[5px]">
+    <div className="flex justify-between w-full">
       {list.map((btn, index) => (
         <NavBtn
           key={index}
@@ -48,7 +48,7 @@ export const NavBtn = (props) => {
   return (
     <button
       onClick={onClick}
-      className="flex gap-[8px] py-[14px] px-[20px] bg-[#19191C] rounded-[12px] text-white"
+      className="flex gap-[8px] p-3 bg-[#19191C] rounded-[12px] text-white"
     >
       {text}
       {icon}
