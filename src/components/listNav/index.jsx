@@ -5,23 +5,32 @@ import { Work } from "../../assets/icons/Work";
 const ListNav = () => {
   const list = [
     {
-      title: "Home",
+      title: "Дом",
       img: <Home />,
     },
     {
-      title: "Work",
+      title: "Работа",
       img: <Work />,
     },
     {
-      title: "Other",
+      title: "Другоеч ",
       img: <Other />,
     },
   ];
 
+  const handleClick = (index) => {
+    console.log(index);
+  };
+
   return (
     <div className="flex gap-[5px]">
       {list.map((btn, index) => (
-        <NavBtn key={index} text={btn.title} icon={btn.img} />
+        <NavBtn
+          key={index}
+          text={btn.title}
+          icon={btn.img}
+          onClick={() => handleClick(index)}
+        />
       ))}
     </div>
   );
@@ -30,10 +39,13 @@ const ListNav = () => {
 export default ListNav;
 
 export const NavBtn = (props) => {
-  const { text, icon } = props;
+  const { text, icon, onClick } = props;
 
   return (
-    <button className="flex gap-[8px] py-[14px] px-[20px] bg-[#19191C] rounded-[12px] text-white">
+    <button
+      onClick={onClick}
+      className="flex gap-[8px] py-[14px] px-[20px] bg-[#19191C] rounded-[12px] text-white"
+    >
       {text}
       {icon}
     </button>
