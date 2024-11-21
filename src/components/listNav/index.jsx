@@ -19,7 +19,11 @@ const ListNav = () => {
   ];
 
   const handleClick = (index) => {
-    console.log(index);
+    if (index === 0) {
+      localStorage.setItem("state", "[42.859187, 74.667871]");
+    } else if (index === 1) {
+      localStorage.setItem("state", "[42.940056, 74.623418]");
+    }
   };
 
   return (

@@ -1,7 +1,6 @@
 import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
 
 export const Maps = () => {
-  // Центр Бишкека
   const mapCenter = [42.826369, 74.54868];
 
   return (
